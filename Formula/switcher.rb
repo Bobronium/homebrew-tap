@@ -1,6 +1,6 @@
 cask "switcher" do
-  version "0.1.3"
-  sha256 "6339ba8fda68a3656dabb8e80e0efa0379a8cdf37e43e272938f3a2151c2141f"
+  version "main"
+  sha256 ""
 
   url "https://github.com/Bobronium/Switcher/releases/download/v#{version}/Switcher-v#{version}.zip"
   name "Switcher"
