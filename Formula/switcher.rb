@@ -2,7 +2,7 @@ cask "switcher" do
   version "main"
   sha256 ""
 
-  url "https://github.com/Bobronium/Switcher/releases/download/v#{version}/Switcher-v#{version}.zip"
+  url "https://github.com/Bobronium/Switcher/releases/download/v#{version}/Switcher-v#{version}.dmg"
   name "Switcher"
   desc "Switcher automates input switching for better sound quality on macOS"
   homepage "https://github.com/Bobronium/Switcher"
@@ -12,7 +12,7 @@ cask "switcher" do
     regex(/href=.*?Switcher[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
-  app "build/release/Switcher.app"
+  app "Switcher.app"
 
   postflight do
     # Add Switcher.app to login items using AppleScript
