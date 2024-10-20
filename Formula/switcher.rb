@@ -1,5 +1,5 @@
 cask "switcher" do
-  version "main"
+  version "0.2.0"
   sha256 ""
 
   url "https://github.com/Bobronium/Switcher/releases/download/v#{version}/Switcher-v#{version}.dmg"
