@@ -18,12 +18,16 @@ cask "switcher" do
     # Add Switcher.app to login items using AppleScript
     system_command "/usr/bin/osascript", args: [
       "-e",
-      'tell application "System Events" to make login item at end with properties {path:"/Applications/Switcher.app", hidden:false, name:"Switcher"}'
+      'try
+         tell application "System Events" to make login item at end with properties {path:"/Applications/Switcher.app", hidden:false, name:"Switcher"}
+       end try'
     ]
     system_command "open", args: [
+      # Will attempt to open Switcher, but ultimately fail due to macOS security settings
       "/Applications/Switcher.app",
     ]
     system_command "open", args: [
+        # Will open the Security & Privacy settings to allow the user to open Switcher
         "x-apple.systempreferences:com.apple.preference.security?General",
     ]
   end
@@ -32,7 +36,9 @@ cask "switcher" do
     executable: "/usr/bin/osascript",
     args: [
       "-e",
-      'tell application "System Events" to delete login item "Switcher"'
+      'try
+         tell application "System Events" to delete login item "Switcher"
+       end try'
     ]
   }
 
